@@ -1,8 +1,10 @@
-package com.marcos.appvendas.appvendas;
+package com.marcos.appvendas.Principal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.marcos.appvendas.appvendas.R;
 
 public class MainActivity extends AppCompatActivity {
 
