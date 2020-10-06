@@ -8,7 +8,8 @@ public class Db extends SQLiteOpenHelper {
 
     public static String DbName = "Vendas.db";
     public static int version = 1;
-    private static String tblClientes ="CREATE TABLE CLIENTES(" +
+
+    private static String tblClientes = "CREATE TABLE CLIENTES(" +
             "cli_codigo INTEGER," +
             "cli_nome VARCHAR DEFAULT 50," +
             "cli_fantasia, " +
@@ -25,7 +26,7 @@ public class Db extends SQLiteOpenHelper {
             "cli_enviado DEFAULT CHAR 1," +
             "cli_chave DEFAULT VARCHAR 100)";
 
-    private String tblProdutos = "CREATE TABLE PRODUTOS (" +
+    private static String tblProdutos = "CREATE TABLE PRODUTOS (" +
             "prd_codigo, INTEGER," +
             "prd_EAN13, VARCHAR DEFAULT 13," +
             "prd_descricao, VARCHAR DEFAULT 50," +
@@ -33,11 +34,11 @@ public class Db extends SQLiteOpenHelper {
             "prd_custo, DECIMAL(10,2)," +
             "prd_quantidade, DECIMAL (10,2)," +
             "prd_preco, DECIMAL(10,2)," +
-            "prd_categoria VARCHAR DEFAULT 30),";
+            "prd_categoria VARCHAR DEFAULT 30)";
 
-    private String tblVendaCliente = "CREATE TABLE VENDA_CLIENTE (" +
+    private static String tblCabecalhoVenda = "CREATE TABLE CABECALHO_VENDA (" +
             "vendac_id INTEGER PRIMARY KEY AUTO_INCREMENT," +
-            "vendac_chave VARCHAR DEFAULT 10," +
+            "vendac_chave VARCHAR DEFAULT 70," +
             "vendac_datahoravenda DATETIME," +
             "vendac_previsaoEntrega DATE," +
             "vendac__user_codigo INTEGER," +
@@ -49,6 +50,15 @@ public class Db extends SQLiteOpenHelper {
             "vendac_latitude DOUBLE,)," +
             "vendac_longitude DOUBLE)";
 
+    private static String tblDetalheVenda = "CREATE TABLE DETALHE_VENDA(" +
+            "vendac_chave VARCHAR DEFAULT 70," +
+            "vendad_nro_item INTEGER," +
+            "vendad_EAN13, VARCHAR DEFAULT 13," +
+            "vendad_prd_codigo, INTEGER," +
+            "vendad_prd_descricao, VARCHAR DEFAULT 50," +
+            "vendad_quantidade DECIMAL(10,2)," +
+            "vendad_preco_venda DECIMAL (10,2)" +
+            "vendad_preco_total_item DECIMAL (10,2)";
 
     public Db(Context context){
         super(context, DbName,null,version);
