@@ -18,13 +18,13 @@ public class Db extends SQLiteOpenHelper {
             "cli_bairro VARCHAR DEFAULT 50," +
             "cli_cep VARCHAR DEFAULT 50," +
             "cid_codigo INTEGER," +
-            "cli_contato DEFAULT VARCHAR 13," +
-            "cli_nascimento DEFAULT VARCHAR 8," +
-            "cli_cpf_cnpj DEFAULT VARCHAR 14," +
-            "cli_rg_incestadual DEFAULT VARCHAR 40," +
-            "cli_email DEFAULT VARCHAR 50," +
-            "cli_enviado DEFAULT CHAR 1," +
-            "cli_chave DEFAULT VARCHAR 100)";
+            "cli_contato VARCHAR DEFAULT 13," +
+            "cli_nascimento VARCHAR DEFAULT 8," +
+            "cli_cpf_cnpj VARCHAR DEFAULT 14," +
+            "cli_rg_incestadual VARCHAR DEFAULT 40," +
+            "cli_email VARCHAR DEFAULT 50," +
+            "cli_enviado CHAR DEFAULT 1," +
+            "cli_chave VARCHAR DEFAULT 100)";
 
     private static String tblProdutos = "CREATE TABLE PRODUTOS (" +
             "prd_codigo, INTEGER," +
@@ -67,6 +67,21 @@ public class Db extends SQLiteOpenHelper {
             "vendad_temp_quantidade DECIMAL(10,2)," +
             "vendad_temp_preco_venda DECIMAL (10,2)" +
             "vendad_temp_preco_total_item DECIMAL (10,2)";
+
+    private static String tblCheque = "CREATE TABLE CHEQUES" +
+            "ch_codigo INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "ch_cli_codigo INTEGER," +
+            "ch_numero_cheque VARCHAR DEFAULT 20," +
+            "ch_contato VARCHAR DEFAULT 11," +
+            "ch_cpf_cnpj_dono VARCHAR DEFAULT 14" +
+            "ch_nome_do_dono VARCHAR DEFAULT 50," +
+            "ch_nome_do_banco VARCHAR DEFAULT 50," +
+            "ch_vencimento DATE," +
+            "ch_valor_cheque DECIMAL (10,2)" +
+            "ch_terceiro CHAR DEFAULT 1," +
+            "vendac_chave VARCHAR DEFAULT 70," +
+            "ch_enviado VARCHAR DEFAULT 1," +
+            "ch_data_cadastro DATE)";
 
     public Db(Context context){
         super(context, DbName,null,version);
