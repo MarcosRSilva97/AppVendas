@@ -60,6 +60,14 @@ public class Db extends SQLiteOpenHelper {
             "vendad_preco_venda DECIMAL (10,2)" +
             "vendad_preco_total_item DECIMAL (10,2)";
 
+    private static String tblDetalheVendaTemp = "CREATE TABLE DETALHE_VENDA_TEMP" +
+            "vendad_temp_EAN13, VARCHAR DEFAULT 13," +
+            "vendad_temp_prd_codigo, INTEGER," +
+            "vendad_temp_prd_descricao, VARCHAR DEFAULT 50," +
+            "vendad_temp_quantidade DECIMAL(10,2)," +
+            "vendad_temp_preco_venda DECIMAL (10,2)" +
+            "vendad_temp_preco_total_item DECIMAL (10,2)";
+
     public Db(Context context){
         super(context, DbName,null,version);
     }
