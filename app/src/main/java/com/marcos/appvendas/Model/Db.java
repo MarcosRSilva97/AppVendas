@@ -47,6 +47,7 @@ public class Db extends SQLiteOpenHelper {
             "vendac_user_nome VARCHAR DEFAULT 50," +
             "vendac_formaPgto VARCHAR DEFAULT 50," +
             "vendac_valor  DECIMAL(10,2)," +
+            "vendac_desconto  DECIMAL(10,2)," +
             "vendac_pesoTotal  DECIMAL(10,2)" +
             "vendac_enviada CHAR DEFAULT 1," +
             "vendac_latitude DOUBLE,)," +
@@ -97,6 +98,16 @@ public class Db extends SQLiteOpenHelper {
             "rec_data_pagamento DATE," +
             "rec_forma_pagamento VARCHAR DEFAULT 20," +
             "rec_enviado CHAR DEFAULT 1)";
+
+    private static String tblConfiguracaoPagamento = "CREATE TABLE CONFIGURACAO_PAGAMENTO(" +
+            "config_codigo INTEGER," +
+            "config_com_entrada," +
+            "config_tipo_pagamento VHARCHAR DEFAULT 20," +
+            "config_forma_pagamento VARCHAR DEFAULT 20," +
+            "config_valor_recebido DECIMAL(10,2)," +
+            "config_parcelas INTEGER," +
+            "config_vendac_chave VARCHAR DEFAULT 70" +
+            "config_enviado CHAR DEFAULT 1)";
 
     public Db(Context context){
         super(context, DbName,null,version);
