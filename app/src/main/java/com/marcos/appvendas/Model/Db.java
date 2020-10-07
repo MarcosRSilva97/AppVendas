@@ -121,6 +121,14 @@ public class Db extends SQLiteOpenHelper {
             "hist_vendac_chave VARCHAR DEFAULT 70," +
             "hist_enviado CHAR DEFAULT 1)";
 
+    private static String tblParametros = "CREATE TABLE PARAMETROS (" +
+            "parm_usu_codigo INTEGER," +
+            "parm_importar_cliente VARCHAR DEFAULT 20," +
+            "parm_ip_local VARCHAR DEFAULT 50," +
+            "parm_ip_remoto VARCHAR DEFAULT 50," +
+            "parm_permitido_estoque_negativo CHAR DEFAULT 1," +
+            "parm_desconto_do_vendedor INTEGER)";
+
     public Db(Context context){
         super(context, DbName,null,version);
     }
