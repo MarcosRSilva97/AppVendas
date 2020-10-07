@@ -109,6 +109,18 @@ public class Db extends SQLiteOpenHelper {
             "config_vendac_chave VARCHAR DEFAULT 70" +
             "config_enviado CHAR DEFAULT 1)";
 
+    private static String tblHistoricoPagamento = "CREATE TABLE HISTORICO_PAGAMENTO(" +
+            "hist_codigo INTEGER," +
+            "hist_numero_parcela INTEGER," +
+            "hist_valor_real_parcela DECIMAL(10,2)," +
+            "hist_valor_pago_no_dia DECIMAL (10,2)," +
+            "hist_restante_a_pagar DECIMAL (10.2)," +
+            "hist_data_do_pagamento DATE," +
+            "hist_nome_cliente VARCHAR DEFAULT 30," +
+            "hist_como_pagou VARCHAR DEFAULT 20," +
+            "hist_vendac_chave VARCHAR DEFAULT 70," +
+            "hist_enviado CHAR DEFAULT 1)";
+
     public Db(Context context){
         super(context, DbName,null,version);
     }
