@@ -27,17 +27,17 @@ public class Db extends SQLiteOpenHelper {
             "cli_chave VARCHAR DEFAULT 100)";
 
     private static String tblProdutos = "CREATE TABLE PRODUTOS (" +
-            "prd_codigo, INTEGER," +
-            "prd_EAN13, VARCHAR DEFAULT 13," +
-            "prd_descricao, VARCHAR DEFAULT 50," +
-            "prd_unMedida, VARCHAR DEFAULT 10," +
-            "prd_custo, DECIMAL(10,2)," +
-            "prd_quantidade, DECIMAL (10,2)," +
-            "prd_preco, DECIMAL(10,2)," +
+            "prd_codigo INTEGER," +
+            "prd_EAN13 VARCHAR DEFAULT 13," +
+            "prd_descricao VARCHAR DEFAULT 50," +
+            "prd_unMedida VARCHAR DEFAULT 10," +
+            "prd_custo DECIMAL(10,2)," +
+            "prd_quantidade DECIMAL (10,2)," +
+            "prd_preco DECIMAL(10,2)," +
             "prd_categoria VARCHAR DEFAULT 30)";
 
     private static String tblCabecalhoVenda = "CREATE TABLE CABECALHO_VENDA (" +
-            "vendac_id INTEGER PRIMARY KEY AUTO_INCREMENT," +
+            "vendac_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "vendac_chave VARCHAR DEFAULT 70," +
             "vendac_datahoravenda DATETIME," +
             "vendac_previsaoEntrega DATE," +
@@ -48,9 +48,9 @@ public class Db extends SQLiteOpenHelper {
             "vendac_formaPgto VARCHAR DEFAULT 50," +
             "vendac_valor  DECIMAL(10,2)," +
             "vendac_desconto  DECIMAL(10,2)," +
-            "vendac_pesoTotal  DECIMAL(10,2)" +
+            "vendac_pesoTotal  DECIMAL(10,2)," +
             "vendac_enviada CHAR DEFAULT 1," +
-            "vendac_latitude DOUBLE,)," +
+            "vendac_latitude DOUBLE," +
             "vendac_longitude DOUBLE)";
 
     private static String tblDetalheVenda = "CREATE TABLE DETALHE_VENDA(" +
@@ -60,7 +60,7 @@ public class Db extends SQLiteOpenHelper {
             "vendad_prd_codigo, INTEGER," +
             "vendad_prd_descricao, VARCHAR DEFAULT 50," +
             "vendad_quantidade DECIMAL(10,2)," +
-            "vendad_preco_venda DECIMAL (10,2)" +
+            "vendad_preco_venda DECIMAL (10,2)," +
             "vendad_preco_total_item DECIMAL (10,2))";
 
     private static String tblDetalheVendaTemp = "CREATE TABLE DETALHE_VENDA_TEMP(" +
@@ -68,7 +68,7 @@ public class Db extends SQLiteOpenHelper {
             "vendad_temp_prd_codigo, INTEGER," +
             "vendad_temp_prd_descricao, VARCHAR DEFAULT 50," +
             "vendad_temp_quantidade DECIMAL(10,2)," +
-            "vendad_temp_preco_venda DECIMAL (10,2)" +
+            "vendad_temp_preco_venda DECIMAL (10,2)," +
             "vendad_temp_preco_total_item DECIMAL (10,2))";
 
     private static String tblCheque = "CREATE TABLE CHEQUES(" +
@@ -76,11 +76,11 @@ public class Db extends SQLiteOpenHelper {
             "ch_cli_codigo INTEGER," +
             "ch_numero_cheque VARCHAR DEFAULT 20," +
             "ch_contato VARCHAR DEFAULT 11," +
-            "ch_cpf_cnpj_dono VARCHAR DEFAULT 14" +
+            "ch_cpf_cnpj_dono VARCHAR DEFAULT 14," +
             "ch_nome_do_dono VARCHAR DEFAULT 50," +
             "ch_nome_do_banco VARCHAR DEFAULT 50," +
             "ch_vencimento DATE," +
-            "ch_valor_cheque DECIMAL (10,2)" +
+            "ch_valor_cheque DECIMAL (10,2)," +
             "ch_terceiro CHAR DEFAULT 1," +
             "ch_vendac_chave VARCHAR DEFAULT 70," +
             "ch_enviado VARCHAR DEFAULT 1," +
@@ -89,7 +89,7 @@ public class Db extends SQLiteOpenHelper {
     private static String tblContasAReceber = "CREATE TABLE CONTAS_RECEBER(" +
             "rec_codigo INTEGER," +
             "rec_num_parcela INTEGER," +
-            "rec_cli_codigo INTEGER." +
+            "rec_cli_codigo INTEGER," +
             "rec_cli_nome VARCHAR DEFAULT 50," +
             "rec_vendac_chave VARCHAR DEFAULT 70," +
             "rec_data_movimento DATE," +
@@ -106,7 +106,7 @@ public class Db extends SQLiteOpenHelper {
             "config_forma_pagamento VARCHAR DEFAULT 20," +
             "config_valor_recebido DECIMAL(10,2)," +
             "config_parcelas INTEGER," +
-            "config_vendac_chave VARCHAR DEFAULT 70" +
+            "config_vendac_chave VARCHAR DEFAULT 70," +
             "config_enviado CHAR DEFAULT 1)";
 
     private static String tblHistoricoPagamento = "CREATE TABLE HISTORICO_PAGAMENTO(" +
@@ -135,6 +135,16 @@ public class Db extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(tblClientes);
+        db.execSQL(tblProdutos);
+        db.execSQL(tblCabecalhoVenda);
+        db.execSQL(tblDetalheVenda);
+        db.execSQL(tblDetalheVendaTemp);
+        db.execSQL(tblCheque);
+        db.execSQL(tblContasAReceber);
+        db.execSQL(tblConfiguracaoPagamento);
+        db.execSQL(tblHistoricoPagamento);
+        db.execSQL(tblParametros);
     }
 
     @Override
