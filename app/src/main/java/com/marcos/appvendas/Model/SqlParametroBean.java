@@ -2,7 +2,7 @@ package com.marcos.appvendas.Model;
 
 public class SqlParametroBean {
 
-    private Integer su_codigoIntegerInteger;
+    private Integer parm_usu_codigo;
     private String parm_importar_cliente;
     private String parm_ip_local;
     private String parm_ip_remoto;
@@ -10,11 +10,11 @@ public class SqlParametroBean {
     private Integer parm_desconto_do_vendedor;
 
     public Integer getSu_codigoIntegerInteger() {
-        return su_codigoIntegerInteger;
+        return parm_usu_codigo;
     }
 
     public void setSu_codigoIntegerInteger(Integer su_codigoIntegerInteger) {
-        this.su_codigoIntegerInteger = su_codigoIntegerInteger;
+        this.parm_usu_codigo = su_codigoIntegerInteger;
     }
 
     public String getParm_importar_cliente() {
