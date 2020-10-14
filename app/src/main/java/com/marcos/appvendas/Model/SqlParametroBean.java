@@ -7,14 +7,13 @@ public class SqlParametroBean {
     private String parm_ip_local;
     private String parm_ip_remoto;
     private String parm_permitido_estoque_negativo;
-    private Integer parm_desconto_do_vendedor;
 
-    public Integer getSu_codigoIntegerInteger() {
+    public Integer getParm_usu_codigo() {
         return parm_usu_codigo;
     }
 
-    public void setSu_codigoIntegerInteger(Integer su_codigoIntegerInteger) {
-        this.parm_usu_codigo = su_codigoIntegerInteger;
+    public void setParm_usu_codigo(Integer parm_usu_codigo) {
+        this.parm_usu_codigo = parm_usu_codigo;
     }
 
     public String getParm_importar_cliente() {
@@ -56,4 +55,6 @@ public class SqlParametroBean {
     public void setParm_desconto_do_vendedor(Integer parm_desconto_do_vendedor) {
         this.parm_desconto_do_vendedor = parm_desconto_do_vendedor;
     }
+
+    private Integer parm_desconto_do_vendedor;
 }
