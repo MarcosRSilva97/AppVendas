@@ -12,11 +12,11 @@ public class SqlParametroDAO {
     private String sql;
     private boolean gravacao;
 
-    public SqlParametroDAO(Context context){
+    public SqlParametroDAO(Context context) {
         this.context = context;
     }
 
-    public boolean gravarParametro(SqlParametroBean parametro){
+    public boolean gravarParametro(SqlParametroBean parametro) {
         SQLiteDatabase db = new Db(context).getWritableDatabase();
         gravacao = false;
 
@@ -32,12 +32,23 @@ public class SqlParametroDAO {
         SQLiteStatement statement = db.compileStatement(sql);
 
         try {
-            statement.bindLong(1, parametro.);
+            statement.bindLong(1, parametro.getParmUsuCodigo());
+            statement.bindString(2, parametro.getParmImportarCliente());
+            statement.bindString(3, parametro.getParmIpLocal());
+            statement.bindString(4, parametro.getParmIpRemoto());
+            statement.bindString(5, parametro.getParmPermitidoEstoqueNegativo());
+            statement.bindLong(6, parametro.getParmDescontoVendedor());
 
-        } catch (SQLiteException exception){
+            if (statement.executeInsert() > 0) {
+                gravacao = true;
+                sql = "";
+            }
+
+        } catch (SQLiteException exception) {
             Log.d("Script", exception.getMessage());
+            gravacao = false;
         }
 
-        return  true;
+        return true;
     }
 }

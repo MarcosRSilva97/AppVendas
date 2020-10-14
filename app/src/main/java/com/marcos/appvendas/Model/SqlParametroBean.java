@@ -2,59 +2,58 @@ package com.marcos.appvendas.Model;
 
 public class SqlParametroBean {
 
-    private Integer parm_usu_codigo;
-    private String parm_importar_cliente;
-    private String parm_ip_local;
-    private String parm_ip_remoto;
-    private String parm_permitido_estoque_negativo;
+    private Integer parmUsuCodigo;
+    private String parmImportarCliente;
+    private String parmIpLocal;
+    private String parmIpRemoto;
+    private String parmPermitidoEstoqueNegativo;
+    private Integer parmDescontoVendedor;
 
-    public Integer getParm_usu_codigo() {
-        return parm_usu_codigo;
+    public Integer getParmDescontoVendedor() {
+        return parmDescontoVendedor;
     }
 
-    public void setParm_usu_codigo(Integer parm_usu_codigo) {
-        this.parm_usu_codigo = parm_usu_codigo;
+    public void setParmDescontoVendedor(Integer parmDescontoVendedor) {
+        this.parmDescontoVendedor = parmDescontoVendedor;
     }
 
-    public String getParm_importar_cliente() {
-        return parm_importar_cliente;
+    public Integer getParmUsuCodigo() {
+        return parmUsuCodigo;
     }
 
-    public void setParm_importar_cliente(String parm_importar_cliente) {
-        this.parm_importar_cliente = parm_importar_cliente;
+    public void setParmUsuCodigo(Integer parmUsuCodigo) {
+        this.parmUsuCodigo = parmUsuCodigo;
     }
 
-    public String getParm_ip_local() {
-        return parm_ip_local;
+    public String getParmImportarCliente() {
+        return parmImportarCliente;
     }
 
-    public void setParm_ip_local(String parm_ip_local) {
-        this.parm_ip_local = parm_ip_local;
+    public void setParmImportarCliente(String parmImportarCliente) {
+        this.parmImportarCliente = parmImportarCliente;
     }
 
-    public String getParm_ip_remoto() {
-        return parm_ip_remoto;
+    public String getParmIpLocal() {
+        return parmIpLocal;
     }
 
-    public void setParm_ip_remoto(String parm_ip_remoto) {
-        this.parm_ip_remoto = parm_ip_remoto;
+    public void setParmIpLocal(String parmIpLocal) {
+        this.parmIpLocal = parmIpLocal;
     }
 
-    public String getParm_permitido_estoque_negativo() {
-        return parm_permitido_estoque_negativo;
+    public String getParmIpRemoto() {
+        return parmIpRemoto;
     }
 
-    public void setParm_permitido_estoque_negativo(String parm_permitido_estoque_negativo) {
-        this.parm_permitido_estoque_negativo = parm_permitido_estoque_negativo;
+    public void setParmIpRemoto(String parmIpRemoto) {
+        this.parmIpRemoto = parmIpRemoto;
     }
 
-    public Integer getParm_desconto_do_vendedor() {
-        return parm_desconto_do_vendedor;
+    public String getParmPermitidoEstoqueNegativo() {
+        return parmPermitidoEstoqueNegativo;
     }
 
-    public void setParm_desconto_do_vendedor(Integer parm_desconto_do_vendedor) {
-        this.parm_desconto_do_vendedor = parm_desconto_do_vendedor;
+    public void setParmPermitidoEstoqueNegativo(String parmPermitidoEstoqueNegativo) {
+        this.parmPermitidoEstoqueNegativo = parmPermitidoEstoqueNegativo;
     }
-
-    private Integer parm_desconto_do_vendedor;
 }
